@@ -13,8 +13,8 @@ jobs:
         run: |
           if [[ $ISSUE == *"bug"* ]]; then
           echo "Issue is about a bug!"
-          echo $ISSUE
-          echo ${{ env.ISSUE }}
           else
           echo "Issue is not about a bug"
+          echo $ISSUE
+          echo ${{ env.ISSUE }}
           fi
