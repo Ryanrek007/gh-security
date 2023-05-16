@@ -10,6 +10,7 @@ jobs:
       - name: Assign label
         env:
           ISSUE:  ${{ github.event.issue.title }}
+          GITHUB_CONTEXT: ${{ toJson(github) }}
         run: |
           if [[ $ISSUE == *"bug"* ]]; then
           echo "Issue is about a bug!"
@@ -18,3 +19,5 @@ jobs:
           echo $ISSUE
           echo ${{ env.ISSUE }}
           fi
+
+          echo $GITHUB_CONTEXT
